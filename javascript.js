@@ -1,4 +1,5 @@
-var slideIndex = 0;
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var slideIndex = 0;
 showSlides();
 
 function showSlides() {
@@ -18,7 +19,7 @@ function inc_fz(){
     for(var i=0;i<fz.length;i++){
         fz[i].style.fontSize = "150%" ;
     }
-	
+  
 }
 
 function inc_fz1(){
@@ -26,22 +27,26 @@ function inc_fz1(){
     for(var i=0;i<fz.length;i++){
         fz[i].style.fontSize = "100%" ;
     }
-	
+  
 }
 
 function change_color(){
-	fz = document.getElementsByClassName("resume");
-	for(var i=0;i<fz.length;i++){
-		fz[i].style.color = "red" ;
-	}
+  fz = document.getElementsByClassName("resume");
+  for(var i=0;i<fz.length;i++){
+    fz[i].style.color = "red" ;
+
+    //Goi CSS vao JS de doi mau the Span
+    var span = document.getElementsByTagName('div');
+    for(let i=0;i<span.length;i++){
+      span[i].classList.toggle('change');
+    }
+  }
 }
 
 function normal_color(){
-	fz = document.getElementsByClassName("resume");
-	for(var i=0;i<fz.length;i++){
-		fz[i].style.color = "black" ;
-	}
+  fz = document.getElementsByClassName("resume");
+  for(var i=0;i<fz.length;i++){
+    fz[i].style.color = "black" ;
+  }
 }
-
-
-
+});
